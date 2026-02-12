@@ -1,24 +1,17 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  // 🔴 CRITICAL: disable turbopack (WASM unsupported)
-  experimental: {
-    turbo: false,
-  },
-
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.pexels.com",
+        hostname: "images.pexels.com"
       },
       {
         protocol: "https",
-        hostname: "i.ytimg.com",
-      },
-    ],
-  },
+        hostname: "i.ytimg.com"
+      }
+    ]
+  }
 };
 
-export default nextConfig;
-
+module.exports = nextConfig;
