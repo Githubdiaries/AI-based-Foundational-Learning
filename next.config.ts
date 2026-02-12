@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // 🔴 CRITICAL: disable turbopack (WASM unsupported)
+  experimental: {
+    turbo: false,
+  },
+
   images: {
     remotePatterns: [
       {
@@ -16,3 +21,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
