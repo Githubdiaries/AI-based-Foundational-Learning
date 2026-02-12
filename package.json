@@ -2,12 +2,13 @@
   "name": "preposition-pal",
   "version": "1.0.0",
   "description": "PrepositionPal - AI-based Foundational Learning Platform for Kids",
+  {
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+    "dev": "NEXT_DISABLE_TURBOPACK=1 next dev",
+    "build": "next build"
+  }
+},
+
   "keywords": [
     "education",
     "learning",
