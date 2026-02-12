@@ -9,5 +9,8 @@
   },
   "dependencies": {
     "next": "16.1.6"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
   }
 }
