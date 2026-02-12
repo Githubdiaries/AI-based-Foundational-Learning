@@ -5,9 +5,11 @@
   {
   "scripts": {
     "dev": "NEXT_DISABLE_TURBOPACK=1 next dev",
-    "build": "next build"
+    "build": "NEXT_DISABLE_TURBOPACK=1 next build",
+    "start": "next start"
   }
 },
+
 
   "keywords": [
     "education",
