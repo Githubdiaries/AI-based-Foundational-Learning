@@ -1,21 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    turbo: false, // critical for WASM / Bolt
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
   },
-
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-      {
-        protocol: "https",
-        hostname: "i.ytimg.com",
-      },
-    ],
-  },
-};
-
-module.exports = nextConfig;
+}

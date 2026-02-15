@@ -9,25 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brightRed: "#FF3B5C",
-        sunnyYellow: "#FFEB3B",
-        skyBlue: "#40C4FF",
-        limeGreen: "#4ADE80",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        comic: ['"Comic Neue"', 'cursive'],
-        bubblegum: ['"Bubblegum Sans"', 'cursive'],
-      },
       animation: {
-        'bounce-slow': 'bounce 2s infinite',
-        'wiggle': 'wiggle 1s ease-in-out infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },
