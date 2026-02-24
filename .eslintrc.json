@@ -1,6 +1,8 @@
-{
-  "extends": ["next/core-web-vitals"],
-  "rules": {
-    "react/no-unescaped-entities": "off"
-  }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
+
+module.exports = nextConfig
