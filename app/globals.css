@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --poke-yellow: #FFD700;
+  --poke-red: #FF1744;
+  --poke-blue: #3B4CCA;
+  --poke-dark: #1a1a2e;
+  --poke-card: #FFFDE7;
+  --ash-brown: #5D4037;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #FFD700 0%, #FFF176 30%, #FFFFFF 60%, #FF1744 100%);
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Pokéball divider */
+.pokeball-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pokeball-divider::before,
+.pokeball-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FF1744, transparent);
+}
+
+/* Pokémon card style */
+.poke-card {
+  background: linear-gradient(145deg, #FFFDE7, #FFF9C4);
+  border: 3px solid #FFD700;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.poke-card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px;
+  height: 6px;
+  background: linear-gradient(90deg, #FF1744, #FFD700, #3B4CCA, #FF1744);
+  border-radius: 16px 16px 0 0;
+}
+
+/* Pokéball button */
+.pokeball-btn {
+  background: linear-gradient(180deg, #FF1744 50%, #FFFFFF 50%);
+  border: 3px solid #1a1a1a;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 23, 68, 0.4);
+}
+.pokeball-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(255, 23, 68, 0.5);
+}
+
+/* Neon text */
+.neon-yellow {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700;
+}
+
+/* Type badge */
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* HP bar */
+.hp-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+.hp-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  transition: width 0.8s ease;
+}
+.hp-fill.medium { background: linear-gradient(90deg, #FF9800, #FFC107); }
+.hp-fill.low { background: linear-gradient(90deg, #FF1744, #FF5252); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FFF9C4; }
+::-webkit-scrollbar-thumb { background: #FFD700; border-radius: 4px; }
+
+/* Pokéball spin loader */
+@keyframes pokeball-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.pokeball-loader {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #FF1744 50%, white 50%);
+  border: 3px solid #333;
+  animation: pokeball-spin 0.8s linear infinite;
+  position: relative;
+}
+.pokeball-loader::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; height: 10px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #333;
+}
