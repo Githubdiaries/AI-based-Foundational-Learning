@@ -1,11 +1,18 @@
 'use client'
+
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
   const router = useRouter()
+
   useEffect(() => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('gp_token') : null
+    let token = null
+
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('gp_token')
+    }
+
     router.replace(token ? '/dashboard' : '/login')
   }, [router])
 
